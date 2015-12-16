@@ -8,6 +8,7 @@
 #			  list of all available packages.
 
 import os
+from tabulate import tabulate
 
 #Clear memory
 os.system('clear')
@@ -29,17 +30,36 @@ if installation == "Y":
 else:
 	pass
 
-#Import necessary packages
-from tabulate import tabulate
+#List of C.E.D.P packages
+pkglist=[
+["1","wavemechanics.py"],
+["2","waveovertopping.py"],
+["3","armourrockvandermeer.py"],
+["4","toestability.py"],
+["5","rearsidestability.py"],
+]
+
 #Display available C.E.D.P. 
 
-contents=[['1','Wave Mechanics','Under Development','WAM'], ['2','Rubble Mound Structures','Under Development', 'RBS'],['2.1','\tWave Overtopping','Under Development','WOG'],['2.2','\tArmour Rock (Van der Meer)','Under Development','ARK'],['2.3','\tToe Stability (Van der Meer)','Under Development','TSY'],['2.4','\tRear Side Stability','Under Development','RSS']]
-
+contents=[
+['1','Wave Mechanics','Under Development','WAM',],
+['>>>','Rubble Mound Structures','Under Development', 'RBS'],
+['2','Wave Overtopping','Under Development','WOG'],
+['3','Armour Rock (Van der Meer)','Under Development','ARK'],
+['4','Toe Stability (Van der Meer)','Under Development','TSY'],
+['5','Rear Side Stability','Under Development','RSS']
+]
+#Generate a beautiful selection table
 print "\n",tabulate(contents, headers=['No','Name', 'Availability', 'Code']),"\n"
 
-#Package selection and launch
-pselect=raw_input("Select a Package:\n>")
+#Package selection, error handling and run package.
 
-#DEVELOP=> launch the correct .py file based on user selection.
-
+while True:
+	try:
+		pselect=int(raw_input("Select a Package No.:\n>"))
+		pselect=pselect-1
+		break
+	except ValueError:
+		print "\nERROR: Please select a valid package number!\n"	
+#os.system(str("python %s",contents[pselect][1])" #keep commented for now.
 
