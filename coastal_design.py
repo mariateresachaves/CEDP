@@ -53,7 +53,6 @@ contents=[
 print "\n",tabulate(contents, headers=['No','Name', 'Availability', 'Code']),"\n"
 
 #Package selection, error handling and run package.
-
 while True:
 	try:
 		pselect=int(raw_input("Select a Package No.:\n>"))
