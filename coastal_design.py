@@ -57,8 +57,7 @@ while True:
 	try:
 		pselect=int(raw_input("Select a Package No.:\n>"))
 		pselect=pselect-1
-		break
+		#os.system(str("python %s",contents[pselect][1])" #keep commented for now.
 	except ValueError:
 		print "\nERROR: Please select a valid package number!\n"	
-#os.system(str("python %s",contents[pselect][1])" #keep commented for now.
 
