@@ -31,7 +31,7 @@ else:
 	pass
 
 #List of C.E.D.P packages
-pkglist=[
+packagelist=[
 ["1","wavemechanics.py"],
 ["2","waveovertopping.py"],
 ["3","armourrockvandermeer.py"],
@@ -56,8 +56,10 @@ print "\n",tabulate(contents, headers=['No','Name', 'Availability', 'Code']),"\n
 while True:
 	try:
 		pselect=int(raw_input("Select a Package No.:\n>"))
-		pselect=pselect-1
-		#os.system(str("python %s",contents[pselect][1])" #keep commented for now.
+		# Reduce selected number by 1 because lists index start as zero (0)
+		pselect = pselect -1
+		break
 	except ValueError:
 		print "\nERROR: Please select a valid package number!\n"	
 
+os.system("python %s" % packagelist[pselect][1])

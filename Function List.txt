@@ -6,4 +6,11 @@ List of available funtions per package:
 		T (s), wave period.
 		d (m), water depth.
 		Output:
-		Wave Length, Relative Water Depth
+		L = Wave Length (m)
+	b. relativedepth(d,L)
+		Input:
+		d (m), water depth.
+		L (m), wave length.
+		Output:
+		string = relative water depth.
+	c.
