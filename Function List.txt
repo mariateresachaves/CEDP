@@ -1,0 +1,9 @@
+List of available funtions per package:
+
+1) Wave Mechanics
+	a. wavelength(T,d)
+		Input:
+		T (s), wave period.
+		d (m), water depth.
+		Output:
+		Wave Length, Relative Water Depth
