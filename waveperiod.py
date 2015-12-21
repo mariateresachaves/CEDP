@@ -28,8 +28,26 @@ while True:
 	except ValueError:
 		print "Please provide a valid input!"
 
-Tselected = raw_input("\n%s" % waveperiodtype[selection-1][1])
+while True:
+	try:
+		Tselected = int(raw_input("\n%s  ->" % waveperiodtype[selection-1][1]))
+		if selection =< 0:
+			raise ValueError
+		break
+	except ValueError:
+		print "Please provide a valid wave period!"
 
-#if selection == 1:
-#	Tm = Tp
+if selection == 1:
+	Tp = Tselected
+	Tm = Tp/1.2
+	Tm10 = Tp/1.1
+elif selection == 2:
+	Tm = Tselected
+	Tp = Tm*1.2
+	Tm = Tp/1.1
+elif selection == 3:
+	Tm10 = Tselected
+	Tp = Tm10*1.1
+	Tm = Tp/1.2
+
 
