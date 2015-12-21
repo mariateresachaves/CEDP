@@ -46,7 +46,7 @@ def wavelength(T,d):
 	return L
 
 L = wavelength(T,d)
-print "Wave Length > L = %.2fm" % L
+print "Wave Length -> L = %.2fm" % L
 
 # Determine relative water depth
 
@@ -60,5 +60,4 @@ def relativedepth(d,L):
 	return relativedepth
 
 relativedepth = relativedepth(d,L)
-print "Relative water depth > %s" % relativedepth
-
+print "Relative water depth -> %s" % relativedepth
