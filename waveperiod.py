@@ -30,8 +30,8 @@ while True:
 
 while True:
 	try:
-		Tselected = int(raw_input("\n%s  ->" % waveperiodtype[selection-1][1]))
-		if selection =< 0:
+		Tselected = int(raw_input("\n%s  -> " % waveperiodtype[selection-1][1]))
+		if selection <= 0:
 			raise ValueError
 		break
 	except ValueError:
@@ -49,5 +49,3 @@ elif selection == 3:
 	Tm10 = Tselected
 	Tp = Tm10*1.1
 	Tm = Tp/1.2
-
-

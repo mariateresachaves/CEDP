@@ -6,33 +6,28 @@
 #Latest Edit: 17.12.2015
 #Description:  Calculates wave mechanics based on Linear Wave Theory
 
+#
 import os
 import math
 os.system("clear")
 print "Wave Mechanics - Linear Wave Theory\n"
 
+##WAVE PERIOD
+#Run waveperiod.py which will request user input for wave period
+#and calcuate Peak, Mean and Spectral wave periods.
+#os.system("python waveperiod.py") The problem with this is that it doesn't pass the variables between both scripts
+from waveperiod import Tp, Tm, Tm10
+
+##WATER DEPTH
 #User input request - Water depth!
 while True:
 	try:
-		d = float(raw_input("d:\tWater Depth (m) >> "))
+		d = float(raw_input("d  (m) Water Depth (m)   -> "))
 		if d<0: 
 			raise ValueError
 		break
 	except ValueError:
 		print "\n>Please provide a valid input!"
-		
-#User input request - Wave Period!
-while True:
-	try:
-		T = float(raw_input("T:\tWave Period >> "))
-		if T<0:
-			raise ValueError
-		break
-	except ValueError:
-		print "\n>Please provide a valid input!" 
-
-# Output Header Print:
-print ("\n"+20*"="+"OUTPUT"+20*"=")
 
 # Calculate wave length
 def wavelength(T,d):
@@ -45,9 +40,6 @@ def wavelength(T,d):
 		L = g*pow(T,2)/(2*math.pi)*((2*math.pi*d)/L)
 	return L
 
-L = wavelength(T,d)
-print "Wave Length -> L = %.2fm" % L
-
 # Determine relative water depth
 
 def relativedepth(d,L):
@@ -59,5 +51,16 @@ def relativedepth(d,L):
 		relativedepth = "Transitional Water"
 	return relativedepth
 
+# Output Header Print:
+print ("\n"+20*"="+"OUTPUT"+20*"="+"\n")
+
+# Outputs wave length and relative water depth
+L = wavelength(Tp,d)
+print "Wave Length                -> L = %.2fm" % L
 relativedepth = relativedepth(d,L)
-print "Relative water depth -> %s" % relativedepth
+print "Relative Water Depth       -> %s" % relativedepth
+
+#Outputs wave periods
+print "Tp Peak Wave Period        -> %.2fs" % Tp
+print "Tm Mean Wave Period        -> %.2fs" % Tm
+print "Tm-1,0 Sectral Wave Period -> %.2fs" % Tm10
