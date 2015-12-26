@@ -52,4 +52,3 @@ if choice == "Y":
 	#clear screen
 	os.system('clear')
 	print "C.E.D.P. successfully installed all the required packages!\n"
-
