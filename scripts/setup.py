@@ -44,7 +44,6 @@ while True:
 		break
 
 if choice == "Y":
-	print operating_system
 	if operating_system == 'Linux':
 		#install tabulate
 		os.system('sudo apt-get install python-pip')

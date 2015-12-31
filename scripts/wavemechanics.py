@@ -9,7 +9,17 @@
 #
 import os
 import math
-os.system("clear")
+from platform import system
+
+#Which is the operating system
+operating_system = system()
+
+if operating_system == 'Linux' or operating_system == 'Darwin':
+	os.system("clear")
+
+elif operating_system == 'Windows':
+	os.system("cls")
+
 print "Wave Mechanics - Linear Wave Theory\n"
 
 ##WAVE PERIOD

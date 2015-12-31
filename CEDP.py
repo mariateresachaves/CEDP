@@ -8,9 +8,18 @@
 #			  list of all available packages.
 
 import os
+from platform import system
 
-#Clear memory
-os.system('clear')
+#Which is the operating system
+operating_system = system()
+
+if operating_system == 'Linux' or operating_system == 'Darwin':
+	#Clear memory
+	os.system("clear")
+
+elif operating_system == 'Windows':
+	#Clear memory
+	os.system("cls")
 
 #Change current folder to /scripts
 os.chdir("scripts")
@@ -20,5 +29,3 @@ os.system("python setup.py")
 
 #Launch main menu
 os.system("python mainmenu.py")
-
-
