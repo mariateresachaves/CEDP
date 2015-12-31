@@ -9,6 +9,10 @@
 import os
 import datetime
 import dateclass
+from platform import system
+
+#Which is the operating system
+operating_system = system()
 
 today = dateclass.MyTime()
 
@@ -40,15 +44,42 @@ while True:
 		break
 
 if choice == "Y":
-	#install tabulate
-	os.system('sudo apt-get install python-pip')
-	#install pip
-	os.system('sudo pip install tabulate')
-	#install packages
-	os.system('sudo apt-get install python-numpy python-scipy python-matplotlib ipython ipython-notebook python-pandas python-sympy python-nose')
+	print operating_system
+	if operating_system == 'Linux':
+		#install tabulate
+		os.system('sudo apt-get install python-pip')
+
+		#install pip
+		os.system('sudo pip install tabulate')
+		
+		#install packages
+		os.system('sudo apt-get install python-numpy python-scipy python-matplotlib ipython ipython-notebook python-pandas python-sympy python-nose')
+		
+		#clear screen
+		os.system('clear')
+
+	elif operating_system == 'Darwin':
+		#install tabulate
+		os.system('brew install python-pip')
+
+		#install pip
+		os.system('pip install tabulate')
+		
+		#install packages
+		os.system('brew install python-numpy python-scipy python-matplotlib ipython ipython-notebook python-pandas python-sympy python-nose')
+		
+		#clear screen
+		os.system('clear')
+
+	#Independent of the operating system
+
 	#generate/overwrite text file recording installation date
 	install_reg = open("install_reg.py","w")
 	install_reg.write(str("%d"%today.days))
-	#clear screen
-	os.system('clear')
+
 	print "C.E.D.P. successfully installed all the required packages!\n"
+
+# -----------------------------------------------------------------------
+	
+	#Missing commands for windows
+	#elif operating_system == 'Windows':
